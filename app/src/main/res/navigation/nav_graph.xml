@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/signUpFragment">
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.my_new_first_chat.ui.fragments.auth.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.my_new_first_chat.ui.fragments.basis.chat.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.my_new_first_chat.ui.fragments.auth.LoginFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/ballFragment"
+        android:name="com.example.my_new_first_chat.ui.fragments.basis.BallFragment"
+        android:label="fragment_ball"
+        tools:layout="@layout/fragment_ball" >
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.my_new_first_chat.ui.fragments.basis.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.my_new_first_chat.ui.fragments.basis.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue=""/>
+    </fragment>
+</navigation>
