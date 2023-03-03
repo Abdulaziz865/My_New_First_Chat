@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.my_new_first_chat.data.models.MessageModel
 import com.example.my_new_first_chat.databinding.ItemMessageBinding
 
-class ChatAdapter() : ListAdapter<MessageModel, ChatAdapter.AnimeViewHolder>(diffUtil) {
+class ChatAdapter : ListAdapter<MessageModel, ChatAdapter.AnimeViewHolder>(diffUtil) {
 
     inner class AnimeViewHolder(private val binding: ItemMessageBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(model: MessageModel?) = with(binding) {
-            txtDescription.text = model?.text
-            txtTime.text = model?.timeSoft
+            txtDescription.text = model?.message
+            txtTime.text = model?.time
         }
     }
 
@@ -35,7 +35,7 @@ class ChatAdapter() : ListAdapter<MessageModel, ChatAdapter.AnimeViewHolder>(dif
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<MessageModel>() {
             override fun areItemsTheSame(oldItem: MessageModel, newItem: MessageModel): Boolean {
-                return oldItem.timeSoft == newItem.timeSoft
+                return oldItem.time == newItem.time
             }
 
             override fun areContentsTheSame(oldItem: MessageModel, newItem: MessageModel): Boolean {

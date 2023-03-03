@@ -7,14 +7,13 @@ import android.util.Patterns
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.my_new_first_chat.R
 import com.example.my_new_first_chat.databinding.FragmentSignUpBinding
-import com.example.my_new_first_chat.extensions.examination
 import com.example.my_new_first_chat.extensions.showToast
+import com.example.my_new_first_chat.utils.SharedPreferenceUtil
 import com.google.firebase.auth.FirebaseAuth
 
 const val ID: String = "1"
@@ -28,10 +27,12 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
         setupListener()
+        onSaveCash()
     }
 
     private fun initialize() {
         firebaseAuth = FirebaseAuth.getInstance()
+        SharedPreferenceUtil.units(requireContext())
     }
 
     private fun setupListener() {
@@ -43,12 +44,13 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful && id.isEmpty()) {
-                        findNavController().navigate(R.id.homeFragment)
-                        examination = ""
+                        findNavController().navigate(R.id.action_signUpFragment_to_homeFragment)
+                        SharedPreferenceUtil.isProver = false
                     } else if (it.isSuccessful && id == "1") {
                         showToast("T")
-                        findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToHomeFragment(ID))
-                        examination = "1"
+                        findNavController().navigate(R.id.homeFragment)
+                        SharedPreferenceUtil.isProver = true
+                        SharedPreferenceUtil.dataAdmin = ID
                     } else {
                         showToast(it.exception.toString())
                     }
@@ -95,5 +97,9 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
                 showToast("Проверьте электронную почту")
             }
         }
+    }
+
+    private fun onSaveCash() {
+        SharedPreferenceUtil.isPreference = false
     }
 }
