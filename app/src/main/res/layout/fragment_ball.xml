@@ -10,67 +10,8 @@
         android:id="@+id/spinner_of_fragments"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:visibility="invisible"
         android:background="#837575"
         android:spinnerMode="dialog"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/list_name"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_of_fragments">
-
-        <EditText
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="123456789"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/list_ball"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_name"
-        app:layout_constraintTop_toBottomOf="@id/spinner_of_fragments">
-
-        <EditText
-            android:id="@+id/ball"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ber"
-            android:textSize="18sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/list_dop_ball"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/list_ball"
-        app:layout_constraintTop_toBottomOf="@id/spinner_of_fragments">
-
-        <EditText
-            android:id="@+id/dop_ball"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="999"
-            android:textSize="18sp" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_save_data_ball"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:text="@string/save"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
 </androidx.constraintlayout.widget.ConstraintLayout>

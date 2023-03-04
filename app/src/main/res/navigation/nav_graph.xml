@@ -48,7 +48,7 @@
     </fragment>
     <fragment
         android:id="@+id/testFragment"
-        android:name="com.example.my_new_first_chat.ui.fragments.test.TestFragment"
+        android:name="com.example.my_new_first_chat.ui.fragments.test.main.TestFragment"
         android:label="fragment_test"
         tools:layout="@layout/fragment_test" />
 </navigation>

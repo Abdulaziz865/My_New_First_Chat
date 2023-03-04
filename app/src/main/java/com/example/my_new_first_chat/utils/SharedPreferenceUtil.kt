@@ -9,7 +9,6 @@ object SharedPreferenceUtil {
     private lateinit var proverka: SharedPreferences
     private lateinit var dataConfig: SharedPreferences
 
-
     fun units(context: Context) {
         preferences = context.getSharedPreferences("shared", Context.MODE_PRIVATE)
     }

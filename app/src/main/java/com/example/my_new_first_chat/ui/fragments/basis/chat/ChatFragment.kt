@@ -11,13 +11,14 @@ import com.example.my_new_first_chat.data.models.MessageModel
 import com.example.my_new_first_chat.databinding.FragmentChatBinding
 import com.example.my_new_first_chat.extensions.showToast
 import com.example.my_new_first_chat.ui.adapter.ChatAdapter
+import com.example.my_new_first_chat.utils.BaseFragment
 import com.example.my_new_first_chat.utils.SharedPreferenceUtil
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ChatFragment : Fragment(R.layout.fragment_chat) {
+class ChatFragment : BaseFragment(R.layout.fragment_chat) {
 
     private val db = Firebase.firestore
     private val chatAdapter = ChatAdapter()

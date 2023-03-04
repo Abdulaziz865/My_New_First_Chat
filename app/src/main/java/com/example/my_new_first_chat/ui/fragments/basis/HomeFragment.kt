@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.my_new_first_chat.R
 import com.example.my_new_first_chat.databinding.FragmentHomeBinding
+import com.example.my_new_first_chat.ui.adapter.MyViewPager2Adapter
 import com.example.my_new_first_chat.ui.adapter.ViewPagerAdapter
 import com.example.my_new_first_chat.utils.SharedPreferenceUtil
 import com.google.android.material.tabs.TabLayoutMediator
@@ -36,7 +37,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun tabLayout() {
-        binding.viewPager2.adapter = ViewPagerAdapter(this)
+        binding.viewPager2.adapter = MyViewPager2Adapter(this)
         TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
             when (position) {
                 0 -> {
